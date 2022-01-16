@@ -21,7 +21,7 @@ function esconderImagens() {
   });
 }
 
-function mostrarImagem() { 
+function mostrarImagem() {
   imagensPainel[imagemAtual].classList.add("mostrar");
 }
 
@@ -30,7 +30,7 @@ setaAvancar.addEventListener("click", function () {
   const totalImagens = imagensPainel.length - 1;
   if (imagemAtual === totalImagens) {
     return;
-  } 
+  }
 
   imagemAtual++;
 
@@ -39,7 +39,7 @@ setaAvancar.addEventListener("click", function () {
   }
   if (imagemAtual === totalImagens) {
     setaAvancar.style.opacity = 0.5;
-  } 
+  }
 
   esconderImagens();
   mostrarImagem();
@@ -56,8 +56,8 @@ setaVoltar.addEventListener("click", function () {
   if (setaAvancar.style.opacity !== 1) {
     setaAvancar.style.removeProperty("opacity");
   }
-  if (imagemAtual === 0) { 
-    setaVoltar.style.opacity = .5
+  if (imagemAtual === 0) {
+    setaVoltar.style.opacity = 0.5;
   }
 
   esconderImagens();

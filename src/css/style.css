@@ -130,6 +130,7 @@ html {
   position: absolute;
   text-indent: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .conteudo-principal .paineis .seta.btn-voltar {
