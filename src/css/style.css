@@ -59,7 +59,7 @@ html {
   transition: .3s ease-in-out;
 }
 
-.titulo:hover {
+.logo:hover .titulo {
   color: var(--cor-destaque);
 }
 
