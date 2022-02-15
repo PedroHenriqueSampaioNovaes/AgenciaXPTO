@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/92189897/153937387-e6b4b166-6e65-42c2-a1a6-676636cb35f6.gif" width="180"></img>
+  <img src="https://user-images.githubusercontent.com/92189897/153937387-e6b4b166-6e65-42c2-a1a6-676636cb35f6.gif" width="180">
 </div>
 
 # AgenciaXPTO
