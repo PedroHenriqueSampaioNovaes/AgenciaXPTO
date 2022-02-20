@@ -6,6 +6,10 @@
 Site de agências criado na semana MAPADEVWEEK do canal no YouTube Dev em Dobro, onde foi usado o HTML, CSS e o javascript para criar o efeito **carrossel** nas imagens do site!
 **[Link p/ AgenciaXPTO!](https://pedrohenriquesampaionovaes.github.io/AgenciaXPTO/)**
 
+## Acrescentado
+- Animação de scroll ao clicar em link interno
+- Algumas alterações de tamanho de fonte para dispositivos mobiles
+
 <div align="center"> 
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="40" title="HTML5">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="40" title="CSS3">
