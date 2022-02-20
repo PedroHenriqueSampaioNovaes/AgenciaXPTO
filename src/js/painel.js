@@ -1,65 +1,87 @@
 /* 
-  quando clicar na seta pra avançar, temos que esconder todas as imagens e mostrar a seguinte
+    Clicando nas setas teremos que desativar todas as imagens que estão aparecendo, removendo a classe responsável por mostrar.
+    
+    Preciso Saber qual é a próxima imagem a ser selecionada por meio de uma lista contendo-as e aplicar a classe mostrar à ela.
 
-  a imagem atual começa em 0 pq é a primeira imagem, assim que for clicado no avançar eu preciso adicionar mais 1 ao contador de imagens pra poder saber que agr vou mostrar a segunda imagem
+    Se estiver na primeira ou última imagem, preciso impedir que o usuário consiga clicar nas setas, aplicando um estilo para que o usuário entenda que n é mais clicável.
+  */
 
-  esconder todas as imagens
-  pegar todas as imagens usando o DOM e remover a classe mostrar
+function initCarrosselImg() {
+  const imagens = document.querySelectorAll('.img-painel');
+  let imagemAtual = 0;
+  const setaAvancar = document.querySelector('.seta-avancar');
+  const setaVoltar = document.querySelector('.seta-voltar');
 
-  mostrar a próxima imagem
-  pegar todas as imagens, descobrir qual é a próxima, e colocar a classe mostrar nela
-*/
+  if (imagens.length) {
+    function esconderImagem() {
+      imagens.forEach((img) => {
+        img.classList.remove('mostrar');
+      })
+    }
 
-const imagensPainel = document.querySelectorAll(".imagem-painel");
-const setaAvancar = document.getElementById("btn-avancar");
-const setaVoltar = document.getElementById("btn-voltar");
-let imagemAtual = 0;
+    function mostrarImagem() {
+      imagens[imagemAtual].classList.add('mostrar');
+    }
 
-function esconderImagens() {
-  imagensPainel.forEach((imagem) => {
-    imagem.classList.remove("mostrar");
-  });
+    function desativarSeta(event) {
+      event.target.classList.add('inativo');
+    }
+
+    function ativarSeta(seta) {
+      seta.classList.remove('inativo');
+    }
+
+    setaVoltar.classList.add('inativo');
+    mostrarImagem();
+    setaAvancar.addEventListener('click', (target) => {
+      const qtdImagens = imagens.length - 1
+      if (imagemAtual === qtdImagens) return;
+      imagemAtual += 1;
+
+      esconderImagem();
+      mostrarImagem();
+
+      if (setaVoltar.classList.contains('inativo')) ativarSeta(setaVoltar);
+
+      if (imagemAtual === qtdImagens) {
+        desativarSeta(target);
+      }
+    })
+
+    setaVoltar.addEventListener('click', (target) => {
+      if (imagemAtual === 0) return
+      imagemAtual -= 1;
+
+      esconderImagem();
+      mostrarImagem();
+
+      if (setaAvancar.classList.contains('inativo')) ativarSeta(setaAvancar);
+
+      if (imagemAtual === 0) {
+        desativarSeta(target);
+      }
+    })
+  }
 }
+initCarrosselImg();
 
-function mostrarImagem() {
-  imagensPainel[imagemAtual].classList.add("mostrar");
+function initScrollSuave() {
+  const linksInternos = document.querySelectorAll('.cabecalho .menu a[href^="#"]');
+  
+  if (linksInternos.length) {
+    function scrollSuave(event) {
+      event.preventDefault();
+
+      const section = document.querySelector(this.getAttribute('href'));
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+
+    linksInternos.forEach((link) => {
+      link.addEventListener('click', scrollSuave);
+    });
+  }
 }
-
-// Função acionada ao pressionar a seta para direita
-setaAvancar.addEventListener("click", function () {
-  const totalImagens = imagensPainel.length - 1;
-  if (imagemAtual === totalImagens) {
-    return;
-  }
-
-  imagemAtual++;
-
-  if (setaVoltar.style.opacity !== 1) {
-    setaVoltar.style.removeProperty("opacity");
-  }
-  if (imagemAtual === totalImagens) {
-    setaAvancar.style.opacity = 0.5;
-  }
-
-  esconderImagens();
-  mostrarImagem();
-});
-
-// Função acionada ao pressionar a seta para esquerda
-setaVoltar.addEventListener("click", function () {
-  if (imagemAtual === 0) {
-    return;
-  }
-
-  imagemAtual--;
-
-  if (setaAvancar.style.opacity !== 1) {
-    setaAvancar.style.removeProperty("opacity");
-  }
-  if (imagemAtual === 0) {
-    setaVoltar.style.opacity = 0.5;
-  }
-
-  esconderImagens();
-  mostrarImagem();
-});
+initScrollSuave();

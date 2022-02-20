@@ -19,27 +19,15 @@ img {
   max-width: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* Cabeçalho */
+/* Cabecalho */
 .cabecalho {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 0;
   max-width: 1170px;
   margin: 0 auto;
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .logo {
@@ -52,34 +40,34 @@ html {
   width: 100px;
 }
 
-.titulo {
-  margin-left: 7px;
-  font-size: 1.0625em; /* 17px */
-  font-weight: 800;
+.logo .titulo {
+  font-size: 1.0625em;
+  font-weight: bolder;
   transition: .3s ease-in-out;
+  margin-left: 7px;
 }
 
 .logo:hover .titulo {
   color: var(--cor-destaque);
 }
 
-.cabecalho .navegacao .menu {
+.menu {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.cabecalho .navegacao .menu .item a {
+.menu li a {
   padding: 15px;
   transition: .3s ease-in-out;
 }
 
-.cabecalho .navegacao .menu .item a:hover {
+.menu li a:hover {
   background: var(--cor-destaque);
 }
 
-/* Painel */
-.conteudo-principal .paineis {
+/* Paineis */
+.paineis {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,185 +75,200 @@ html {
   position: relative;
 }
 
-.conteudo-principal .paineis .imagem-painel {
-  background: no-repeat center;
-  background-size: cover;
-  min-width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  filter: brightness(70%);
-
-  opacity: 0;
+.paineis .titulo {
+  font-size: calc(1em + 1vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
   transition: .3s ease-in-out;
 }
 
-.conteudo-principal .paineis .projeto1 {
+.paineis .img-painel {
+  background: no-repeat center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+  filter: brightness(70%);
+  transition: .3s ease-in-out;
+}
+
+.paineis .projeto1 {
   background-image: url(../img/painel1.jpg);
 }
 
-.conteudo-principal .paineis .projeto2 {
+.paineis .projeto2 {
   background-image: url(../img/painel2.jpg);
 }
 
-.conteudo-principal .paineis .projeto3 {
+.paineis .projeto3 {
   background-image: url(../img/painel3.jpg);
 }
 
-.conteudo-principal .paineis .imagem-painel.mostrar {
+.paineis .projeto1.mostrar, .paineis .projeto2.mostrar, .paineis .projeto3.mostrar {
   opacity: 1;
 }
 
-.conteudo-principal .paineis .titulo {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: calc(1em + 1vw);
-}
-
-.conteudo-principal .paineis .seta {
-  background: url('../img/seta.png') no-repeat center;
+.seta {
+  background: url(../img/seta.png) no-repeat center;
   background-size: contain;
   width: 50px;
   height: 50px;
   position: absolute;
-  text-indent: 100%;
+  text-indent: 100px;
   overflow: hidden;
   cursor: pointer;
 }
 
-.conteudo-principal .paineis .seta.btn-voltar {
+.seta.inativo {
+  opacity: .5;
+  cursor: default;
+}
+
+.seta-voltar {
   left: 20px;
   transform: rotate(180deg);
 }
 
-.conteudo-principal .paineis .seta.btn-avancar {
+.seta-avancar {
   right: 20px;
 }
 
-/* Quem Somos */
-.quem-somos {
+/* Quem somos */
+.conteudo-principal .quem-somos {
   background: var(--bg-azul);
-}
-
-.quem-somos .conteudo {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0 10%;
 }
 
-.quem-somos .conteudo .informacoes {
-  width: 40%;
-}
-
-.quem-somos .conteudo .imagem {
-  width: 60%;
-}
-
-.quem-somos .conteudo .informacoes .titulo {
+.conteudo-principal .quem-somos .titulo {
   font-size: 3.125em;
+  font-weight: bold;
   color: var(--cor-destaque);
+  margin-left: 7px;
   margin-bottom: 20px;
 }
 
-.quem-somos .conteudo .informacoes .texto {
+.conteudo-principal .texto {
   font-size: 1.25em;
-  line-height: 1.5;
   color: #fff;
-  font-weight: 400;
+  line-height: 1.5;
 }
 
-/* Rodapé */
-.rodape {
+.conteudo-principal .informacoes {
+  width: 40%;
+}
+
+.conteudo-principal .quem-somos .img {
+  width: 60%;
+}
+
+/* Footer */
+.footer {
   padding: 80px 0 20px 0;
 }
 
-.rodape .navegacao {
+.footer .navegacao {
   max-width: 1170px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-.rodape .redes-sociais {
+.redes-sociais {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.rodape .redes-sociais a {
+.rede-social {
   display: flex;
   justify-content: center;
-  font-size: 30px;
+  padding: 15px;
   border: 2px solid #111;
   border-radius: 50%;
-  padding: 15px;
   width: 65px;
-  transition: 0.3s ease-in-out;
+  font-size: 30px;
+  transition: .3s ease-in-out;
 }
 
-.rodape .redes-sociais a:hover {
+.rede-social:hover {
   background: var(--cor-destaque);
 }
 
-.rodape .copyright {
+.copy {
   margin-top: 70px;
   text-align: center;
 }
 
 /* Media Queries */
-@media (max-width: 400px) {
-  .conteudo-principal .paineis .titulo {
-    font-size: calc(.8em + 1vw);
+@media (max-width: 1170px) {
+  .conteudo-principal .quem-somos {
+    text-align: center;
+    padding: 60px 80px;
   }
 
-  .conteudo-principal .paineis .seta {
-    width: 25px;
-  }
-}
-
-@media (max-width: 624px) {
-  .cabecalho {
-    flex-direction: column;
+  .conteudo-principal .informacoes {
+    width: auto;
   }
 
-  .cabecalho .logo {
-    margin-bottom: 30px;
+  .conteudo-principal .quem-somos .img {
+    display: none;
   }
 
-  .cabecalho .menu .item a {
-    font-size: calc(.6em + 1vw);
+  .conteudo-principal .quem-somos .titulo {
+    margin-left: 0;
   }
 }
 
 @media (max-width: 900px) {
-  .conteudo-principal .paineis {
+  .paineis {
     height: 500px;
   }
 }
 
-@media (max-width: 1200px) {
-  .quem-somos .conteudo {
-    text-align: center;
-    padding: 60px 20px;
+@media (max-width: 630px) {
+  .cabecalho, .footer .navegacao {
+    flex-direction: column;
   }
 
-  .quem-somos .conteudo .imagem {
-    display: none;
-  }
-  
-  .quem-somos .conteudo .informacoes {
-    width: 100%;
-  }
-}
-
-@media (max-width: 940px) {
-  .rodape .navegacao .logo {
+  .logo {
     margin-bottom: 30px;
   }
 
-  .rodape .navegacao .logo, .rodape .navegacao .redes-sociais {
-    width: 100%;
-    justify-content: center;
+  .conteudo-principal .quem-somos {
+    text-align: left;
+  }
+}
+
+@media (max-width: 550px) {
+  .conteudo-principal .quem-somos {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 415px) {
+  .conteudo-principal .quem-somos .titulo {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 360px) {
+  .paineis .titulo {
+    font-size: calc(.8em + 1vw);
+  }
+
+  .seta-voltar {
+    left: 5px;
+  }
+
+  .seta-avancar {
+    right: 5px;
   }
 }

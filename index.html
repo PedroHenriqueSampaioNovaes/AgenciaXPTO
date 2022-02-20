@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Somos uma agência apaixonada por inovação">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a6477c5e80.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="src/css/normalize.css">
   <link rel="stylesheet" href="src/css/reset.css">
@@ -19,77 +17,57 @@
 <body>
   <header class="cabecalho">
     <a href="#" class="logo">
-      <img src="src/img/cafe.gif" alt="Logo XPTO" class="imagem">
-      <span class="titulo">Agência XPTO</span>
+      <img src="src/img/cafe.gif" alt="Agência XPTO" class="imagem">
+      <span class="titulo">Agência xpto</span>
     </a>
-
-    <nav class="navegacao">
+    <nav>
       <ul class="menu">
-        <li class="item">
-          <a href="#projetos">Projetos</a>
-        </li>
-        <li class="item">
-          <a href="#quem-somos">Quem Somos</a>
-        </li>
-        <li class="item">
-          <a href="#contato">Contato</a>
-        </li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
-
   <main class="conteudo-principal" id="projetos">
     <section class="paineis">
       <h1 class="titulo">Nossos projetos</h1>
-
-      <div class="imagem-painel projeto1 mostrar"></div>
-      <div class="imagem-painel projeto2"></div>
-      <div class="imagem-painel projeto3"></div>
-
-      <span id="btn-voltar" class="seta btn-voltar" style="opacity: .5;">Voltar</span>
-      <span id="btn-avancar" class="seta btn-avancar">Avançar</span>
+      <div class="img-painel projeto1"></div>
+      <div class="img-painel projeto2"></div>
+      <div class="img-painel projeto3"></div>
+      <a href="#" class="seta seta-voltar">Voltar</a>
+      <a href="#" class="seta seta-avancar">Avançar</a>
     </section>
-
     <section class="quem-somos" id="quem-somos">
-      <div class="conteudo">
-        <div class="informacoes">
-          <h2 class="titulo">Quem somos</h2>
-          <p class="texto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit laboriosam similique eius temporibus sed sequi vitae, laudantium nihil nesciunt veritatis deleniti, ducimus quam, enim cupiditate ipsam quia architecto. Rem, voluptate!
-          </p>
-        </div>
-
-        <img src="src/img/composition-12.svg" class="imagem" alt="Personagem Com Celular na Mão">
+      <div class="informacoes">
+        <h2 class="titulo">Quem somos</h2>
+        <p class="texto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit laboriosam similique eius temporibus sed sequi vitae, laudantium nihil nesciunt veritatis deleniti, ducimus quam, enim cupiditate ipsam quia architecto. Rem, voluptate!
+        </p>
       </div>
+      <img class="img" src="src/img/composition-12.svg" alt="Imagem de um personagem com celular em mãos tirando self">
     </section>
   </main>
-
-  <footer class="rodape" id="contato">
+  <footer class="footer" id="contato">
     <nav class="navegacao">
       <a href="#" class="logo">
-        <img src="src/img/cafe.gif" alt="Logo XPTO" class="imagem">
-        <span class="titulo">Agência XPTO</span>
+        <img src="src/img/cafe.gif" alt="Agência XPTO" class="imagem">
+        <span class="titulo">Agência xpto</span>
       </a>
-
       <div class="redes-sociais">
-        <a href="#" class="rede-social">
-          <i class="fab fa-facebook-f"></i>
+        <a class="rede-social" href="https://www.facebook.com/" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
         </a>
-
-        <a href="#" class="rede-social">
-          <i class="fab fa-instagram-square"></i>
+        <a class="rede-social" href="https://www.instagram.com/" target="_blank">
+          <i class="fa-brands fa-instagram-square"></i>
         </a>
-
-        <a href="#" class="rede-social">
-          <i class="fab fa-twitter"></i>
+        <a class="rede-social" href="http://www.twitter.com/" target="_blank">
+          <i class="fa-brands fa-twitter"></i>
         </a>
       </div>
     </nav>
-
-    <p class="copyright">&copy; Todos os direitos reservados</p>
+    <p class="copy">&copy; Todos os direitos reservados</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
   <script src="src/js/painel.js"></script>
 </body>
 
